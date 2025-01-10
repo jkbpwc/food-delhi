@@ -3,7 +3,7 @@ import { StoreContext } from "../../context/StoreContext";
 import { Button, Input } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
 const Cart = () => {
-  const { food_list, addItems, removeItems, cartItems, subTotal } =
+  const { url, food_list, addItems, removeItems, cartItems, subTotal } =
     useContext(StoreContext);
   const deliveryFee = 2;
   const subTotalFee = subTotal();
@@ -23,7 +23,7 @@ const Cart = () => {
                 >
                   <div className="flex flex-row gap-4">
                     <img
-                      src={items.image}
+                      src={url+"/images/"+items.image}
                       className="w-[100px] h-[100px] object-cover object-center rounded-3xl"
                     ></img>
                     <div>
